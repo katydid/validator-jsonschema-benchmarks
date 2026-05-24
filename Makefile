@@ -57,7 +57,7 @@ define docker_run
 				jsonschema-benchmark/$($@_TOOL) $($@_INPUT) $($@_MISC) > $@.tmp ; \
 		STATUS=$$? ; \
 		if ! grep '.*,.*,' $@.tmp > /dev/null; then echo -n "0,0,0," >> $@ ; cat $@.tmp  >> $@ ; else cat $@.tmp >> $@ ; fi ; \
-		gsed -i "$$ s/$$/,$$STATUS/" $@ ; \
+		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
 		rm -f $@.tmp ; \
 	done
 endef
