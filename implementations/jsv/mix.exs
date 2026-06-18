@@ -11,14 +11,12 @@ defmodule JsonSchemaBenchmark.MixProject do
   end
 
   def application() do
-    [
-    ]
+    []
   end
 
   defp deps() do
     [
-      {:jsv, "~> 0.19.5"},
-      {:poison, "~> 6.0"}
+      {:jsv, "~> 0.19.5"}
     ]
   end
 end

@@ -8,9 +8,12 @@ RUN apt-get update -qq \
 
 ENV MIX_ENV=prod
 
-COPY . /app
 WORKDIR /app
+COPY ./mix.exs /app/mix.exs
 RUN mix deps.get && mix deps.compile
+
+COPY . /app
 RUN mix compile
+
 ENTRYPOINT ["/app/memory-wrapper.sh", "mix", "run", "benchmark.exs"]
 CMD []
