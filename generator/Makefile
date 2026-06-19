@@ -15,10 +15,12 @@
 generate:
 	go run ./cmd/generator -seed=123456 -num=10000 ../schemas/
 
-# draft-04-rmUniqueItems-invalid: limit generation to 500 instances to avoid issues with go-kaptinlin. TODO report issue and when it is fixed, undo the limit.
-# jsconfig-rmUniqueItems-invalid: limit generation to 400 instances to avoid issues with networknt. TODO report issue and when it is fixed, undo the limit.
-# vercel-invalid: blaze (https://github.com/sourcemeta/blaze/issues/878)
-# ui5-invalid: jsu-c, jsu-java, jsu-js, jsu-py (https://github.com/clairey-zx81/json-model/issues/8)
+# draft-04-rmUniqueItems-invalid: limit generation to 500 instances to avoid issues with go-kaptinlin. https://github.com/kaptinlin/jsonschema/issues/120
+# vercel-invalid: (update blaze to get fixes) limit generation and change seed to avoid issues with blaze. https://github.com/sourcemeta/blaze/issues/878
+# jsconfig-rmUniqueItems-invalid: limit generation to 400 instances to avoid issues with networknt. https://github.com/networknt/json-schema-validator/issues/1252
+# importmap-invalid: limit generation to 500 instances to avoid issues with networknt. https://github.com/networknt/json-schema-validator/issues/1252
+# fabric-mod-invalid: jsu-c, jsu-java, jsu-js, jsu-py https://github.com/clairey-zx81/json-model/issues/9
+# ui5-invalid: jsu-c, jsu-java, jsu-js, jsu-py https://github.com/clairey-zx81/json-model/issues/8
 
 mutate:
 	((rm -rf ../schemas/ansible-meta-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/ansible-meta)
@@ -34,7 +36,7 @@ mutate:
 	((rm -rf ../schemas/fabric-mod-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/fabric-mod)
 	((rm -rf ../schemas/geojson-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/geojson)
 	((rm -rf ../schemas/gitpod-configuration-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/gitpod-configuration)
-	((rm -rf ../schemas/importmap-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/importmap)
+	((rm -rf ../schemas/importmap-invalid || true) && go run ./cmd/mutator -seed=123456 -num=500 ../schemas/importmap)
 	((rm -rf ../schemas/jasmine-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/jasmine)
 	((rm -rf ../schemas/jsconfig-rmUniqueItems-invalid || true) && go run ./cmd/mutator -num=400 -seed=123456 ../schemas/jsconfig-rmUniqueItems)
 	((rm -rf ../schemas/jshintrc-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/jshintrc)
