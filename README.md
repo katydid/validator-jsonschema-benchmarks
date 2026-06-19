@@ -77,8 +77,6 @@ Compared to the original [SourceMeta's JSONSchema Benchmarks](https://github.com
 - [go-katydid-mem-reflect](./implementations/go-katydid-mem-reflect/) (Go)
 - [rapidjson](./implementations/rapidjson/) (C++) (ignored)
 
-Also note that [go-santhosh-tekuri](./implementations/go-santhosh-tekuri/) was renamed from [go-jsonschema](https://github.com/sourcemeta-research/jsonschema-benchmark/tree/main/implementations/go-jsonschema).
-
 Each implementation is run via Docker.
 First, a Docker container is built with all the necessary dependencies.
 Then, at runtime, a folder containing the schema and the necessary dependencies is mounted and the time to validate all documents is measured.
@@ -95,8 +93,8 @@ Finally, appropriate targets must be added to the `Makefile` to build the Docker
 ## Schemas
 
 All schemas are found in the schemas folder.
-Some schemas had a collection of instances gathered from github.
-The rest we can regenerate `instances.jsonl` files for by running: `make generate`.
+Some schemas had a collection of instances gathered from github, which are mutated to create invalid instances via `make mutate`.
+The rest we can regenerate valid and invalid instances for by running: `make generate`.
 
 We run a curated list of [curated_schemas.txt](./curated_schemas.txt) where:
 * schemas with `uniqueItems` have been removed and replaced with schemes where `uniqueItems` have been removed from the schema,
