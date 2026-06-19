@@ -25,7 +25,7 @@ func validateAll(parser json.Parser, matcher jsonschema.Matcher, instances [][]b
 			return err
 		}
 		if got != want {
-			return fmt.Errorf("want %v, but got %v for instance: %s", want, got, instances[i])
+			return fmt.Errorf("want %v, but got %v for instance (%d): %s", want, got, i, instances[i])
 		}
 	}
 	return nil

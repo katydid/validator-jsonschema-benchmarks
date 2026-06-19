@@ -21,7 +21,6 @@ generate:
 # vercel-invalid: change seed and limit generation to 500 instances to avoid issues with blaze. TODO report issue and when it is fixed, undo the limit.
 
 # TODO fix clang-format-invalid: katydid
-# TODO fix cmake-presets-invalid: katydid
 # TODO investigate ui5-invalid: katydid, jsu-c, jsu-java, jsu-js, jsu-py
 
 mutate:

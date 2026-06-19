@@ -25,7 +25,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"unicode/utf8"
 
 	"github.com/katydid/validator-jsonschema-benchmarks/generator/rand"
 	"github.com/katydid/validator-jsonschema-benchmarks/generator/rand/randjson"
@@ -118,6 +117,8 @@ func tryFieldMutate(r rand.Rand, v *jsonschema.Schema, line string) *string {
 		panic(err)
 	}
 	data = bytes.Replace(data, []byte(`\u003e`), []byte(">"), -1)
+	data = bytes.Replace(data, []byte(`\u003c`), []byte("<"), -1)
+	data = bytes.Replace(data, []byte(`\u0026`), []byte("&"), -1)
 	datas := string(data)
 	return try(v, datas)
 }
@@ -179,19 +180,6 @@ func numMutationPoints(a any) int {
 		n = 1
 	}
 	return n
-}
-
-func tryRuneMutate(r rand.Rand, v *jsonschema.Schema, line string) *string {
-	runes := []rune(line)
-	l := len(runes)
-	if l == 0 {
-		return nil
-	}
-	index := r.Intn(l)
-	newrune := r.Intn(utf8.MaxRune)
-	runes[index] = rune(newrune)
-	res := string(runes)
-	return try(v, res)
 }
 
 func try(v *jsonschema.Schema, res string) *string {
