@@ -138,6 +138,7 @@ func mutatePoint(r rand.Rand, a any, p *int) any {
 			v := t[k]
 			v = mutatePoint(r, v, p)
 			t[k] = v
+			// TODO what about adding or removing fields
 		}
 		return t
 	case []any:
@@ -146,6 +147,7 @@ func mutatePoint(r rand.Rand, a any, p *int) any {
 			t[i] = v
 			*p = *p - 1
 		}
+		// TODO what about adding or removing items
 		return t
 	default:
 		if *p == 0 {
