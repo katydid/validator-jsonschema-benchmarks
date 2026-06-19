@@ -15,13 +15,10 @@
 generate:
 	go run ./cmd/generator -seed=123456 -num=10000 ../schemas/
 
-# babelrc-invalid: blaze (https://github.com/sourcemeta/blaze/issues/874)
 # draft-04-rmUniqueItems-invalid: limit generation to 500 instances to avoid issues with go-kaptinlin. TODO report issue and when it is fixed, undo the limit.
 # jsconfig-rmUniqueItems-invalid: limit generation to 400 instances to avoid issues with networknt. TODO report issue and when it is fixed, undo the limit.
-# vercel-invalid: change seed and limit generation to 500 instances to avoid issues with blaze. TODO report issue and when it is fixed, undo the limit.
-
-# TODO fix clang-format-invalid: katydid
-# TODO investigate ui5-invalid: katydid, jsu-c, jsu-java, jsu-js, jsu-py
+# vercel-invalid: blaze (https://github.com/sourcemeta/blaze/issues/878)
+# ui5-invalid: jsu-c, jsu-java, jsu-js, jsu-py (https://github.com/clairey-zx81/json-model/issues/8)
 
 mutate:
 	((rm -rf ../schemas/ansible-meta-invalid || true) && go run ./cmd/mutator -seed=123456 ../schemas/ansible-meta)

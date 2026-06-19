@@ -133,6 +133,7 @@ func mutatePoint(r rand.Rand, a any, p *int) any {
 				if err != nil {
 					panic(err)
 				}
+				delete(t, k)
 				k = s
 			}
 			*p = *p - 1
