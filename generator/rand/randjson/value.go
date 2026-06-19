@@ -105,7 +105,7 @@ func randObject(r rand.Rand, c *config) string {
 	}
 	ss := make([]string, l)
 	for i := 0; i < l; i++ {
-		ss[i] = randWs(r, c) + String(r) + randWs(r, c) + ":" + randElement(r, c)
+		ss[i] = randWs(r, c) + String(r, WithMinStringLength(1)) + randWs(r, c) + ":" + randElement(r, c)
 	}
 	return "{" + strings.Join(ss, ",") + "}"
 }
@@ -147,7 +147,7 @@ func String(r rand.Rand, opts ...Option) string {
 func randString(r rand.Rand, c *config) string {
 	n := c.maxStringLength
 	if c.maxStringLength != c.minStringLength {
-		n = int(r.Intn(c.maxStringLength-c.minStringLength) + c.minStringLength)
+		n = int(r.Intn(c.maxStringLength-c.minStringLength)) + c.minStringLength
 	}
 	ss := make([]string, n)
 	for i := range ss {

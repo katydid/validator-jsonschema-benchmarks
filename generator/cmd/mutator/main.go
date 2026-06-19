@@ -127,15 +127,15 @@ func mutatePoint(r rand.Rand, a any, p *int) any {
 	switch t := a.(type) {
 	case map[string]any:
 		for _, k := range std.SortedKeys(t) {
+			v := t[k]
 			if *p == 0 {
-				s, err := strconv.Unquote(randjson.String(r))
+				s, err := strconv.Unquote(randjson.String(r, randjson.WithMinStringLength(1)))
 				if err != nil {
 					panic(err)
 				}
 				k = s
 			}
 			*p = *p - 1
-			v := t[k]
 			v = mutatePoint(r, v, p)
 			t[k] = v
 			// TODO what about adding or removing fields
@@ -158,6 +158,7 @@ func mutatePoint(r rand.Rand, a any, p *int) any {
 			if err != nil {
 				panic(err)
 			}
+			*p = *p - 1
 			return v
 		}
 		*p = *p - 1

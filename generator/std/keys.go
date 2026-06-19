@@ -20,7 +20,7 @@ import (
 )
 
 func SortedKeys[A cmp.Ordered, B any](m map[A]B) []A {
-	keys := make([]A, len(m))
+	keys := make([]A, 0, len(m))
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
