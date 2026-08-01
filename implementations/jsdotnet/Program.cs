@@ -2,7 +2,6 @@ using Json.Schema;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using Json.More;
 
@@ -15,7 +14,7 @@ var evaluationOptions = new EvaluationOptions
     // OutputFormat = OutputFormat.Hierarchical, // uncomment for more detailed error reporting.
 	};
 
-bool ValidateAll(JsonSchema schema, JsonNode[] docs, bool want) {
+bool ValidateAll(JsonSchema schema, JsonElement[] docs, bool want) {
   foreach (var doc in docs) {
     try
 		{
@@ -47,7 +46,7 @@ TimeSpan compileTs = stopWatch.Elapsed;
 // Read and parse all instances
 var lines = File.ReadLines(args[1]);
 stopWatch.Start();
-var docs = lines.Select(l => JsonNode.Parse(l)).ToArray();
+var docs = lines.Select(l => JsonDocument.Parse(l).RootElement).ToArray();
 stopWatch.Stop();
 TimeSpan parseTs = stopWatch.Elapsed;
 
