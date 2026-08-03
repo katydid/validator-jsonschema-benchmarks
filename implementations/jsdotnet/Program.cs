@@ -26,6 +26,7 @@ bool ValidateAll(JsonSchema schema, JsonElement[] docs, bool want) {
       }
     } catch (Exception e) {
       if (want) {
+        Console.Error.WriteLine(e);
         return false;
       }
     }
