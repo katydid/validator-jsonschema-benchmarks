@@ -47,6 +47,7 @@
     },
     "transaction": {
       "$anchor": "transaction",
+      "type": "object",
       "additionalProperties": false,
       "required": ["metadata", "hash", "inputs", "outputs"],
       "properties": {
