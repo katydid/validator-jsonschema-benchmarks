@@ -4,7 +4,7 @@
   "type": "array",
   "items": {"$ref": "#transaction"},
   "minItems": 1,
-  "$defs": {
+  "definitions": {
     "base58": {
       "$anchor": "base58",
       "type": "string",
@@ -47,6 +47,7 @@
     },
     "transaction": {
       "$anchor": "transaction",
+      "type": "object",
       "additionalProperties": false,
       "required": ["metadata", "hash", "inputs", "outputs"],
       "properties": {
