@@ -3,14 +3,14 @@ module implementations/go-katydidauto
 go 1.26.3
 
 require (
-	github.com/katydid/parser-go-reflect v0.3.7
-	github.com/katydid/validator-go-jsonschema v0.1.3
+	katydid.org.za/go/parser-go-reflect v0.5.1
+	katydid.org.za/go/validator-go-jsonschema v0.1.4
 )
 
 require (
 	github.com/dlclark/regexp2/v2 v2.0.1 // indirect
 	github.com/jtacoma/uritemplates v1.0.0 // indirect
-	github.com/katydid/parser-go v0.9.0 // indirect
-	github.com/katydid/parser-go-json v0.6.0 // indirect
-	github.com/katydid/validator-go v0.7.2 // indirect
+	katydid.org.za/go/parser-go v0.11.1 // indirect
+	katydid.org.za/go/parser-go-json v0.8.1 // indirect
+	katydid.org.za/go/validator-go v0.8.3 // indirect
 )
