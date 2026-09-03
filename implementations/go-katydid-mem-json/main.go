@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/katydid/parser-go-json/json"
-	"github.com/katydid/validator-go-jsonschema/jsonschema"
+	"katydid.org.za/go/parser-go-json/json"
+	"katydid.org.za/go/validator-go-jsonschema/jsonschema"
 )
 
 const WarmupIterations = 1000
