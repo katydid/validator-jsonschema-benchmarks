@@ -5,7 +5,7 @@ Each validator is run with multiple schemas and a collection of documents that m
 
 ## Results
 
-See the [most recent recorded results](./recorded/2026-09-02/Readme.md).
+See the [most recent recorded results](./recorded/2026-09-04/Readme.md).
 
 We record results in the [recorded](./recorded/Readme.md) folder.
 
