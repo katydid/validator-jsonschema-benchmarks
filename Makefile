@@ -397,6 +397,24 @@ dist/results/go-katydid-auto-json/%: \
 	| dist/results/go-katydid-auto-json
 	@$(call docker_run,go-katydid-auto-json,/workspace/$(dir $(word 2,$^)))
 
+# GO / KATYDID-AUTO WITH JSON PARSER MIN PARSING TIME
+
+implementations/go-katydid-auto-json-min-parse/.dockertimestamp: \
+	implementations/go-katydid-auto-json-min-parse/memory-wrapper.sh \
+	implementations/go-katydid-auto-json-min-parse/go.mod \
+	implementations/go-katydid-auto-json-min-parse/go.sum \
+	implementations/go-katydid-auto-json-min-parse/main.go \
+	implementations/go-katydid-auto-json-min-parse/Dockerfile
+	docker build -t jsonschema-benchmark/go-katydid-auto-json-min-parse implementations/go-katydid-auto-json-min-parse
+	touch $@
+
+dist/results/go-katydid-auto-json-min-parse/%: \
+	implementations/go-katydid-auto-json-min-parse/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/go-katydid-auto-json-min-parse
+	@$(call docker_run,go-katydid-auto-json-min-parse,/workspace/$(dir $(word 2,$^)))
+
 # GO / KATYDID-MEM WITH REFLECT PARSER
 
 implementations/go-katydid-mem-reflect/.dockertimestamp: \
@@ -415,7 +433,7 @@ dist/results/go-katydid-mem-reflect/%: \
 	| dist/results/go-katydid-mem-reflect
 	@$(call docker_run,go-katydid-mem-reflect,/workspace/$(dir $(word 2,$^)))
 
-# GO / KATYDID-MEM WITH REFLECT JSON
+# GO / KATYDID-MEM WITH JSON PARSER
 
 implementations/go-katydid-mem-json/.dockertimestamp: \
 	implementations/go-katydid-mem-json/memory-wrapper.sh \
@@ -432,6 +450,24 @@ dist/results/go-katydid-mem-json/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/go-katydid-mem-json
 	@$(call docker_run,go-katydid-mem-json,/workspace/$(dir $(word 2,$^)))
+
+# GO / KATYDID-MEM WITH JSON PARSER MIN PARSING TIME
+
+implementations/go-katydid-mem-json-min-parse/.dockertimestamp: \
+	implementations/go-katydid-mem-json-min-parse/memory-wrapper.sh \
+	implementations/go-katydid-mem-json-min-parse/go.mod \
+	implementations/go-katydid-mem-json-min-parse/go.sum \
+	implementations/go-katydid-mem-json-min-parse/main.go \
+	implementations/go-katydid-mem-json-min-parse/Dockerfile
+	docker build -t jsonschema-benchmark/go-katydid-mem-json-min-parse implementations/go-katydid-mem-json-min-parse
+	touch $@
+
+dist/results/go-katydid-mem-json-min-parse/%: \
+	implementations/go-katydid-mem-json-min-parse/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/go-katydid-mem-json-min-parse
+	@$(call docker_run,go-katydid-mem-json-min-parse,/workspace/$(dir $(word 2,$^)))
 
 # GO / SANTHOSH_TEKURI
 

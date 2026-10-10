@@ -1,0 +1,16 @@
+github.com/dlclark/regexp2/v2 v2.0.1 h1:eaQ7GE11jgSwLMM5BQ9BerbAXI3TLq+Y6o53V6z2tlw=
+github.com/dlclark/regexp2/v2 v2.0.1/go.mod h1:Bz5TMy5d8fPK0ximH0Yi9KvsRHNnvXqUx9XG6a4wB+I=
+github.com/jtacoma/uritemplates v1.0.0 h1:xwx5sBF7pPAb0Uj8lDC1Q/aBPpOFyQza7OC705ZlLCo=
+github.com/jtacoma/uritemplates v1.0.0/go.mod h1:IhIICdE9OcvgUnGwTtJxgBQ+VrTrti5PcbLVSJianO8=
+katydid.org.za/go/parser-go v0.12.0 h1:GpEBc8zXgkWDfDAeapUDOtYyiW/GFhH8bNOgINmJ/jU=
+katydid.org.za/go/parser-go v0.12.0/go.mod h1:e1ZTtXTE/kBuCQ9mQKz4/POfyAj1bHHJdVG75BvDjo0=
+katydid.org.za/go/parser-go-json v0.8.2 h1:wqLIfpoc1jfDKdKXVfnm2gVUaJcqhr2p6DNboWdyjzI=
+katydid.org.za/go/parser-go-json v0.8.2/go.mod h1:Pc07jF3HwT+lMRYPAdVzQEXwhn6uESTxtq8AJpdj3gU=
+katydid.org.za/go/parser-go-reflect v0.5.2 h1:V90/qPZt5hUEMzYSWBwE+VY6apTEQ2VjdUAdHcQtUHs=
+katydid.org.za/go/parser-go-reflect v0.5.2/go.mod h1:EGG6LHI791cmyMooyhrMkYiXFb2kodCTJZMV+3MtzBo=
+katydid.org.za/go/parser-go-xml v0.2.3 h1:t2savyYCCv/5tMphUOspTFEBJodQZDLj5+J44erIDCA=
+katydid.org.za/go/parser-go-xml v0.2.3/go.mod h1:oP0VhiikAjQmP64HkeY0GS69qSlQ1dJGGLHuCw4hJRI=
+katydid.org.za/go/validator-go v0.8.5 h1:OYPhxrCx6xLqp2s+ENJV4odOpV3weLQS8jPCm+BnGyQ=
+katydid.org.za/go/validator-go v0.8.5/go.mod h1:DnGhMujEskm7+2l+ALwcTULfXwHQ2neMZynHSKM4F/w=
+katydid.org.za/go/validator-go-jsonschema v0.1.5 h1:cUZTvpa996aRZeHkugIBbdMJePNgST+P2UoRMXmqJc4=
+katydid.org.za/go/validator-go-jsonschema v0.1.5/go.mod h1:gTddBVsgFssPPjFh4pnYtP+DjUQTeY0q/LrIKERWJJU=
