@@ -125,35 +125,37 @@ type details struct {
 }
 
 var implDetails = map[string]*details{
-	"ajv":                     {Name: "Ajv", Lang: "Javascript (gen)", Link: "https://ajv.js.org/"},
-	"ajv-bun":                 {Name: "Ajv-Bun", Lang: "Javascript (gen)", Link: "https://ajv.js.org/"},
-	"blaze":                   {Name: "Blaze", Lang: "C++", Link: "https://github.com/sourcemeta/blaze"},
-	"boon":                    {Name: "boon", Lang: "Rust", Link: "https://github.com/santhosh-tekuri/boon"},
-	"corvus":                  {Name: "Corvus", Lang: "C# (gen)", Link: "https://github.com/corvus-dotnet/Corvus.JsonSchema"},
-	"go-google":               {Name: "Google", Lang: "Golang", Link: "https://github.com/google/jsonschema-go"},
-	"go-json-schema-spec":     {Name: "json-schema-spec", Lang: "Golang", Link: "https://github.com/json-schema-spec/json-schema-go"},
-	"go-kaptinlin":            {Name: "kaptinlin", Lang: "Golang", Link: "https://github.com/kaptinlin/jsonschema"},
-	"go-katydid-auto-json":    {Name: "Katydid-Comp-Fused", Lang: "Golang", Link: "https://github.com/katydid/validator-go-jsonschema"},
-	"go-katydid-auto-reflect": {Name: "Katydid-Comp-Steps", Lang: "Golang", Link: "https://github.com/katydid/validator-go-jsonschema"},
-	"go-katydid-mem-json":     {Name: "Katydid-Memo-Fused", Lang: "Golang", Link: "https://github.com/katydid/validator-go-jsonschema"},
-	"go-katydid-mem-reflect":  {Name: "Katydid-Memo-Steps", Lang: "Golang", Link: "https://github.com/katydid/validator-go-jsonschema"},
-	"go-santhosh-tekuri":      {Name: "santhosh-tekuri", Lang: "Golang", Link: "https://github.com/santhosh-tekuri/jsonschema/"},
-	"hyperjump":               {Name: "Hyperjump", Lang: "Javascript", Link: "https://github.com/hyperjump-io/json-schema"},
-	"jsdotnet":                {Name: "json-everything", Lang: "C#", Link: "https://github.com/json-everything/json-everything"},
-	"json_schemer":            {Name: "JSONSchemer", Lang: "Ruby", Link: "https://github.com/davishmcclurg/json_schemer"},
-	"jsoncons":                {Name: "jsoncons", Lang: "C++", Link: "https://github.com/danielaparker/jsoncons"},
-	"jsu-c":                   {Name: "JSU", Lang: "C++ (gen)", Link: "https://github.com/zx80/json-schema-utils"},
-	"jsu-java":                {Name: "JSU", Lang: "Java (gen)", Link: "https://github.com/zx80/json-schema-utils"},
-	"jsu-js":                  {Name: "JSU", Lang: "Javascript (gen)", Link: "https://github.com/zx80/json-schema-utils"},
-	"jsu-pl":                  {Name: "JSU", Lang: "Perl (gen)", Link: "https://github.com/zx80/json-schema-utils"},
-	"jsu-py":                  {Name: "JSU", Lang: "Python (gen)", Link: "https://github.com/zx80/json-schema-utils"},
-	"jsv":                     {Name: "JSV", Lang: "Elixir", Link: "https://github.com/lud/jsv"},
-	"kmp":                     {Name: "OptimumCode", Lang: "Kotlin", Link: "https://github.com/OptimumCode/json-schema-validator"},
-	"networknt":               {Name: "networknt", Lang: "Java", Link: "https://github.com/networknt/json-schema-validator"},
-	"opis":                    {Name: "Opis", Lang: "PHP", Link: "https://opis.io/json-schema"},
-	"py-jsonschema":           {Name: "py-jsonschema", Lang: "Python", Link: "https://github.com/python-jsonschema/jsonschema/"},
-	"rapidjson":               {Name: "RapidJSON", Lang: "C++", Link: "https://github.com/Tencent/rapidjson/"},
-	"schemasafe":              {Name: "schemasafe", Lang: "Javascript", Link: "https://github.com/ExodusMovement/schemasafe"},
+	"ajv":                              {Name: "Ajv", Lang: "Javascript (gen)", Link: "https://ajv.js.org/"},
+	"ajv-bun":                          {Name: "Ajv-Bun", Lang: "Javascript (gen)", Link: "https://ajv.js.org/"},
+	"blaze":                            {Name: "Blaze", Lang: "C++", Link: "https://github.com/sourcemeta/blaze"},
+	"boon":                             {Name: "boon", Lang: "Rust", Link: "https://github.com/santhosh-tekuri/boon"},
+	"corvus":                           {Name: "Corvus", Lang: "C# (gen)", Link: "https://github.com/corvus-dotnet/Corvus.JsonSchema"},
+	"go-google":                        {Name: "Google", Lang: "Golang", Link: "https://github.com/google/jsonschema-go"},
+	"go-json-schema-spec":              {Name: "json-schema-spec", Lang: "Golang", Link: "https://github.com/json-schema-spec/json-schema-go"},
+	"go-kaptinlin":                     {Name: "kaptinlin", Lang: "Golang", Link: "https://github.com/kaptinlin/jsonschema"},
+	"go-katydid-auto-json":             {Name: "Katydid-Comp-Fused", Lang: "Golang", Link: "https://git.katydid.org.za/validator-go-jsonschema"},
+	"go-katydid-auto-reflect":          {Name: "Katydid-Comp-Steps", Lang: "Golang", Link: "https://git.katydid.org.za/validator-go-jsonschema"},
+	"go-katydid-mem-json":              {Name: "Katydid-Memo-Fused", Lang: "Golang", Link: "https://git.katydid.org.za/validator-go-jsonschema"},
+	"go-katydid-mem-reflect":           {Name: "Katydid-Memo-Steps", Lang: "Golang", Link: "https://git.katydid.org.za/validator-go-jsonschema"},
+	"go-katydid-auto-json-min-parse":   {Name: "Katydid-Comp-Fused-min-Parse", Lang: "Golang", Link: "https://git.katydid.org.za/validator-go-jsonschema"},
+	"go-katydid-mem-reflect-min-parse": {Name: "Katydid-Memo-Steps-min-Parse", Lang: "Golang", Link: "https://git.katydid.org.za/validator-go-jsonschema"},
+	"go-santhosh-tekuri":               {Name: "santhosh-tekuri", Lang: "Golang", Link: "https://github.com/santhosh-tekuri/jsonschema/"},
+	"hyperjump":                        {Name: "Hyperjump", Lang: "Javascript", Link: "https://github.com/hyperjump-io/json-schema"},
+	"jsdotnet":                         {Name: "json-everything", Lang: "C#", Link: "https://github.com/json-everything/json-everything"},
+	"json_schemer":                     {Name: "JSONSchemer", Lang: "Ruby", Link: "https://github.com/davishmcclurg/json_schemer"},
+	"jsoncons":                         {Name: "jsoncons", Lang: "C++", Link: "https://github.com/danielaparker/jsoncons"},
+	"jsu-c":                            {Name: "JSU", Lang: "C++ (gen)", Link: "https://github.com/zx80/json-schema-utils"},
+	"jsu-java":                         {Name: "JSU", Lang: "Java (gen)", Link: "https://github.com/zx80/json-schema-utils"},
+	"jsu-js":                           {Name: "JSU", Lang: "Javascript (gen)", Link: "https://github.com/zx80/json-schema-utils"},
+	"jsu-pl":                           {Name: "JSU", Lang: "Perl (gen)", Link: "https://github.com/zx80/json-schema-utils"},
+	"jsu-py":                           {Name: "JSU", Lang: "Python (gen)", Link: "https://github.com/zx80/json-schema-utils"},
+	"jsv":                              {Name: "JSV", Lang: "Elixir", Link: "https://github.com/lud/jsv"},
+	"kmp":                              {Name: "OptimumCode", Lang: "Kotlin", Link: "https://github.com/OptimumCode/json-schema-validator"},
+	"networknt":                        {Name: "networknt", Lang: "Java", Link: "https://github.com/networknt/json-schema-validator"},
+	"opis":                             {Name: "Opis", Lang: "PHP", Link: "https://opis.io/json-schema"},
+	"py-jsonschema":                    {Name: "py-jsonschema", Lang: "Python", Link: "https://github.com/python-jsonschema/jsonschema/"},
+	"rapidjson":                        {Name: "RapidJSON", Lang: "C++", Link: "https://github.com/Tencent/rapidjson/"},
+	"schemasafe":                       {Name: "schemasafe", Lang: "Javascript", Link: "https://github.com/ExodusMovement/schemasafe"},
 }
 
 func fprintMarkdown(
@@ -305,8 +307,14 @@ func fprintLatex(
 		})
 		j := 0
 		for _, impl := range impls {
-			if impl.Name == "go-katydid-auto-reflect" || impl.Name == "go-katydid-mem-reflect" || impl.Name == "go-katydid-mem-json" {
-				// remove katydid-auto-reflect and katydid-mem-reflect the objects they create will be discard and -json alternatives are faster.
+			if impl.Name == "go-katydid-auto-reflect" ||
+				impl.Name == "go-katydid-mem-reflect" ||
+				impl.Name == "go-katydid-mem-json" ||
+				impl.Name == "go-katydid-auto-json-min-parse" ||
+				impl.Name == "go-katydid-mem-json-min-parse" {
+				// remove katydid-auto-reflect and katydid-mem-reflect the objects they create will be discard and ...-json alternatives are faster.
+				// remove go-katydid-mem-json since auto is faster.
+				// remove ...-min-parse, since these have parsing times included.
 				continue
 			}
 			j++
@@ -340,6 +348,7 @@ func fprintLatex(
 		for _, impl := range impls {
 			if impl.Name == "go-katydid-auto-json" || impl.Name == "go-katydid-mem-json" || impl.Name == "go-katydid-mem-reflect" {
 				// remove katydid-auto-json and katydid-mem-json, since they both do not create any structures that can be reused
+				// remove go-katydid-mem-reflect, since auto is faster.
 				continue
 			}
 			j++

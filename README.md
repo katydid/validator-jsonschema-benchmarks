@@ -36,7 +36,7 @@ Analytics currently requires Go to be installed:
 ## Implementations
 
 Outside of Katydid, the benchmarks include 18 implementations in various programming languages:
-* Ajv: The popular Javascript implementation Ajv, including an implementation executed on the BUN~\cite{javascript_engine_bun} Javascript runtime for extra speed;
+* Ajv: The popular Javascript implementation Ajv, including an implementation executed on the BUN Javascript runtime for extra speed;
 * Blaze: A highly optimized C++ implementation that uses a custom field name hash function for faster string comparison;
 * JSON Schema Utils (JSU) is a tool that generates code in several target languages: C, Java, Javascript or Python to validate a specific schema (we left out the Perl version);
 * Corvus.JsonSchema: A tool that generates C# for a specific schema;
@@ -58,8 +58,10 @@ A summary of these implementations is given below:
 - [go-json-schema-spec](./implementations/go-json-schema-spec/) (Go) (returns error) ([ignored](./implementations/go-json-schema-spec/.benchmark-ignore))
 - [go-kaptinlin](./implementations/go-kaptinlin/) (Go) (returns error)
 - [go-katydid-auto-json](./implementations/go-katydid-auto-json/) (Go)  (returns bool)
+- [go-katydid-auto-json-min-parse](./implementations/go-katydid-auto-json-min-parse/) (Go)  (returns bool)
 - [go-katydid-auto-reflect](./implementations/go-katydid-auto-reflect/) (Go)  (returns bool)
 - [go-katydid-mem-json](./implementations/go-katydid-mem-json/) (Go) (returns bool)
+- [go-katydid-mem-json-min-parse](./implementations/go-katydid-mem-json-min-parse/) (Go) (returns bool)
 - [go-katydid-mem-reflect](./implementations/go-katydid-mem-reflect/) (Go) (returns bool)
 - [go-santhosh-tekuri](./implementations/go-santhosh-tekuri/) (Go) (returns error)
 - [hyperjump](./implementations/hyperjump/) (Javascript) (returns Result)
