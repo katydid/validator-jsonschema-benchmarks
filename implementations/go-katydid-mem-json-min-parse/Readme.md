@@ -1,0 +1,1 @@
+[katydid-mem](https://github.com/katydid/validator-go-jsonschema) (Go) memoizes with json parser.
