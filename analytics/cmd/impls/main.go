@@ -240,10 +240,10 @@ func fprintMarkdown(
 	}
 
 	// remove katydid-auto-json and katydid-mem-json, since they both do not create any structures that can be reused
-	for i := range implss {
-		implss[i] = slices.DeleteFunc(implss[i], func(impl *analytics.Implementation) bool { return impl.Name == "go-katydid-auto-json" })
-		implss[i] = slices.DeleteFunc(implss[i], func(impl *analytics.Implementation) bool { return impl.Name == "go-katydid-mem-json" })
-	}
+	// for i := range implss {
+	// 	implss[i] = slices.DeleteFunc(implss[i], func(impl *analytics.Implementation) bool { return impl.Name == "go-katydid-auto-json" })
+	// 	implss[i] = slices.DeleteFunc(implss[i], func(impl *analytics.Implementation) bool { return impl.Name == "go-katydid-mem-json" })
+	// }
 	p("\n")
 	p(`## API Gateway with generic reuse use case (valid docs and parsing time excluded)`)
 	for i, impls := range implss {
